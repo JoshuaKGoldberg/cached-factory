@@ -48,26 +48,11 @@ describe("CachedFactory", () => {
 		expect(getter.mock.calls).toEqual([["key-first"], ["key-second"]]);
 	});
 
-	it("clears the cache when .clear is executed", async () => {
-		const wait = (ms: number) =>
-			new Promise<void>((resolve) => {
-				setTimeout(() => {
-					resolve();
-				}, ms);
-			});
-
-		const getter = vi.fn().mockImplementation((key: string) => {
-			const fn = () => {
-				return `${key}-${Date.now()}`;
-			};
-
-			return fn();
-		});
+	it("clears the cache when .clear is executed", () => {
+		const getter = vi.fn().mockImplementation((key: string) => Symbol(key));
 		const cachedFactory = new CachedFactory(getter);
 
 		const initialValue = cachedFactory.get("key");
-		expect(cachedFactory.get("key")).toEqual(initialValue);
-		await wait(1);
 		expect(cachedFactory.get("key")).toEqual(initialValue);
 
 		cachedFactory.clear();
