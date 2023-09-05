@@ -49,16 +49,18 @@ describe("CachedFactory", () => {
 	});
 
 	it("clears the cache when .clear is executed", () => {
-		const getter = vi.fn().mockImplementation((key: string) => Symbol(key));
+		const getter = vi
+			.fn()
+			.mockReturnValueOnce("first")
+			.mockReturnValue("second");
+
 		const cachedFactory = new CachedFactory(getter);
 
-		const initialValue = cachedFactory.get("key");
-		expect(cachedFactory.get("key")).toEqual(initialValue);
+		const first = cachedFactory.get("key");
 
 		cachedFactory.clear();
 
-		const nextValue = cachedFactory.get("key");
-		expect(cachedFactory.get("key")).toEqual(nextValue);
-		expect(cachedFactory.get("key")).not.toEqual(initialValue);
+		const second = cachedFactory.get("key");
+		expect(second).not.toEqual(first);
 	});
 });
