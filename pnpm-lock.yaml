@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 devDependencies:
   '@types/eslint':
     specifier: ^8.44.2
@@ -78,8 +74,8 @@ devDependencies:
     specifier: ^14.0.1
     version: 14.0.1
   markdownlint:
-    specifier: ^0.30.0
-    version: 0.30.0
+    specifier: ^0.32.0
+    version: 0.32.0
   markdownlint-cli:
     specifier: ^0.35.0
     version: 0.35.0
@@ -4573,6 +4569,17 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
+  /markdown-it@13.0.2:
+    resolution: {integrity: sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==}
+    hasBin: true
+    dependencies:
+      argparse: 2.0.1
+      entities: 3.0.1
+      linkify-it: 4.0.1
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+    dev: true
+
   /markdown-it@8.4.2:
     resolution: {integrity: sha512-GcRz3AWTqSUphY3vsUqQSFMbgR38a4Lh3GWlHRh/7MRwz8mcu9n2IO7HOh+bXHrR9kOPDl5RNCaEsrneb+xhHQ==}
     hasBin: true
@@ -4625,11 +4632,11 @@ packages:
       markdownlint-micromark: 0.1.5
     dev: true
 
-  /markdownlint@0.30.0:
-    resolution: {integrity: sha512-nInuFvI/rEzanAOArW5490Ez4EYpB5ODqVM0mcDYCPx9DKJWCQqCgejjiCvbSeE7sjbDscVtZmwr665qpF5xGA==}
-    engines: {node: '>=16'}
+  /markdownlint@0.32.0:
+    resolution: {integrity: sha512-DIA2LclWqWmyU1Z73mTYa9/oilWJGdCW+tiPpziwmut/O7LxmEI8xKeg3vhEezXOyMaTV76HSX3/HmypRC2/8w==}
+    engines: {node: '>=18'}
     dependencies:
-      markdown-it: 13.0.1
+      markdown-it: 13.0.2
       markdownlint-micromark: 0.1.7
     dev: true
 
@@ -6894,3 +6901,7 @@ packages:
   /zod@3.22.2:
     resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
