@@ -63,4 +63,17 @@ describe("CachedFactory", () => {
 		const second = cachedFactory.get("key");
 		expect(second).toEqual(secondValue);
 	});
+
+	it("returns entries when .entries() is called", () => {
+		const value = "value";
+		const getter = vi.fn().mockReturnValueOnce(value).mockReturnValue("second");
+		const cachedFactory = new CachedFactory(getter);
+
+		const key = "key";
+		cachedFactory.get(key);
+
+		const actual = cachedFactory.entries();
+
+		expect(Array.from(actual)).toEqual([[key, value]]);
+	});
 });

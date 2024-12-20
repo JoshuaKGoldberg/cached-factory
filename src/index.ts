@@ -12,6 +12,10 @@ export class CachedFactory<Key, Value> {
 		this.#cache.clear();
 	}
 
+	entries() {
+		return this.#cache.entries();
+	}
+
 	get(key: Key) {
 		const existing = this.#cache.get(key);
 		if (existing) {
