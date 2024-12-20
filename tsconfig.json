@@ -4,7 +4,7 @@
 		"declarationMap": true,
 		"esModuleInterop": true,
 		"module": "ESNext",
-		"moduleResolution": "NodeNext",
+		"moduleResolution": "Bundler",
 		"outDir": "lib",
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
