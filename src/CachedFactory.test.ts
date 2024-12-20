@@ -47,4 +47,20 @@ describe("CachedFactory", () => {
 
 		expect(getter.mock.calls).toEqual([["key-first"], ["key-second"]]);
 	});
+
+	it("creates a new value under a key when .get() is used after .clear()", () => {
+		const secondValue = "second";
+		const getter = vi
+			.fn()
+			.mockReturnValueOnce("first")
+			.mockReturnValueOnce(secondValue);
+
+		const cachedFactory = new CachedFactory(getter);
+
+		cachedFactory.get("key");
+		cachedFactory.clear();
+
+		const second = cachedFactory.get("key");
+		expect(second).toEqual(secondValue);
+	});
 });
