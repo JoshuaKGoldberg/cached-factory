@@ -33,8 +33,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
       create-typescript-app:
-        specifier: 2.17.1
-        version: 2.17.1(bingo-systems@0.5.4)
+        specifier: 2.30.0
+        version: 2.30.0(bingo-systems@0.5.4)
       cspell:
         specifier: 8.18.0
         version: 8.18.0
@@ -1333,12 +1333,12 @@ packages:
     resolution: {integrity: sha512-NQcnlAtnR72Cfn6Y9EWPS3RXAGM+4ndE3BEueLnWOQgj+/Y6kQyhGEiB7cPmi4VeJL+Kcqo/EGyzuF23aIT3Cg==}
     engines: {node: '>=18'}
 
-  bingo-stratum@0.5.7:
-    resolution: {integrity: sha512-PznnKNYhGe5DobDVBvIMGn0mIXorSSwUBeG2NaCl5PI3prcGeD5NubzFDeq2O3WzH/l9MZ3wmz5a2nB7YiHKrA==}
+  bingo-stratum@0.5.11:
+    resolution: {integrity: sha512-5tmx6zmqDjHyMklhnYsUNyv9aJVxu92kYdUlSs3Jq42w9WVIwCACJatCMUJYDRo6035MXjB6sbUSORT55l/qBg==}
     engines: {node: '>=18'}
     peerDependencies:
-      bingo: ^0.5.9
-      bingo-fs: ^0.5.4
+      bingo: ^0.5.14
+      bingo-fs: ^0.5.5
       bingo-systems: ^0.5.4
       zod: ^3.24.2
 
@@ -1630,8 +1630,8 @@ packages:
       typescript:
         optional: true
 
-  create-typescript-app@2.17.1:
-    resolution: {integrity: sha512-Ddd5UJ7uVrL0nKUF+CkVrDRi5bQ23cryfIin5Ig4KhR0oW7Sevf8Rsdj8qYyhUSGtOcKImHISP7zmTo+mMMRPQ==}
+  create-typescript-app@2.30.0:
+    resolution: {integrity: sha512-XWFYMHcZ0VUCa4gj+DI2I3LjcgWJhhhrRRj2tPeXVYMf/F4eoRVmevvyu9aRm98TYfUN2cAWHCruTJ4VEVyFFg==}
     engines: {node: '>=18.3.0'}
     hasBin: true
 
@@ -2561,6 +2561,11 @@ packages:
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
+  json5@2.2.3:
+    resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
+    engines: {node: '>=6'}
+    hasBin: true
+
   jsonc-eslint-parser@2.4.0:
     resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -2708,6 +2713,11 @@ packages:
   markdownlint@0.37.4:
     resolution: {integrity: sha512-u00joA/syf3VhWh6/ybVFkib5Zpj2e5KB/cfCei8fkSRuums6nyisTWGqjTWIOFoFwuXoTBQQiqlB4qFKp8ncQ==}
     engines: {node: '>=18'}
+
+  marked@15.0.7:
+    resolution: {integrity: sha512-dgLIeKGLx5FwziAnsk4ONoGwHwGPJzselimvlVskE9XLN4Orv9u2VA3GWw/lYUqjfA0rUT/6fqKwfZJapP9BEg==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   mdast-util-from-markdown@0.8.5:
     resolution: {integrity: sha512-2hkTXtYYnr+NubD/g6KGBS/0mFmBcifAsI0yIWRiRo0PjVs6SSOSOdtzbp6kSGnShDN6G5aWZpKQ2lWRy27mWQ==}
@@ -3287,8 +3297,8 @@ packages:
     engines: {node: ^20.9.0 || >=22.0.0}
     hasBin: true
 
-  remove-dependencies@0.1.0:
-    resolution: {integrity: sha512-K9PXkqGYkuQbRVf57SI/t3xBhw87pLbvd94zir6v4+ptJQ0TSjLWtd0ZlebtQEOfnxSchz+wgzTvG7KNpLMAbg==}
+  remove-dependencies@0.1.1:
+    resolution: {integrity: sha512-CDQMz0yYx8Jta0LcWgGdkRXbd+wxXlGj7mPKJAkBkJjw0Wq4WVgPpQs3/S695YnBcTpk1JxLAiX+oPw+2Cqagw==}
     engines: {node: '>=18.3.0'}
     hasBin: true
 
@@ -3971,6 +3981,10 @@ packages:
   zod-package-json@1.1.0:
     resolution: {integrity: sha512-RvEsa3W/NCqEBMtnoE09GRVelA3IqRcKaijEiM6CEGsD19qLurf0HjrYMHwOqImOszlLL0ja63DPJeeU4pm7oQ==}
     engines: {node: '>=20'}
+
+  zod-tsconfig@0.2.0:
+    resolution: {integrity: sha512-ug/zndWh/wNiejtCJ2tGyNzi3Nf94ZnpFos/e5CGTIXYIwoXMiXYg3a3SptYVrfXFnLCpuTTfVjYWh6q9djKhA==}
+    engines: {node: '>=18.3.0'}
 
   zod-validation-error@3.4.0:
     resolution: {integrity: sha512-ZOPR9SVY6Pb2qqO5XHt+MkkTRxGXb4EVtnjc9JpXUOtUB1T9Ru7mZOT361AN3MsetVe7R0a1KZshJDZdgp9miQ==}
@@ -5139,7 +5153,7 @@ snapshots:
     dependencies:
       '@octokit/types': 13.10.0
 
-  bingo-stratum@0.5.7(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.14)(zod@3.24.2):
+  bingo-stratum@0.5.11(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.14)(zod@3.24.2):
     dependencies:
       all-properties-lazy: 0.1.0
       bingo: 0.5.14
@@ -5464,11 +5478,11 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.2
 
-  create-typescript-app@2.17.1(bingo-systems@0.5.4):
+  create-typescript-app@2.30.0(bingo-systems@0.5.4):
     dependencies:
       bingo: 0.5.14
       bingo-fs: 0.5.5
-      bingo-stratum: 0.5.7(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.14)(zod@3.24.2)
+      bingo-stratum: 0.5.11(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.14)(zod@3.24.2)
       cached-factory: 0.1.0
       cspell-populate-words: 0.3.0
       execa: 9.5.2
@@ -5480,13 +5494,15 @@ snapshots:
       input-from-file-json: 0.5.4(bingo@0.5.14)(zod@3.24.2)
       input-from-script: 0.5.4(bingo@0.5.14)
       js-yaml: 4.1.0
+      json5: 2.2.3
       lazy-value: 3.0.0
       lodash: 4.17.21
+      marked: 15.0.7
       npm-user: 6.1.1
       object-strings-deep: 0.1.1
       parse-author: 2.0.0
       parse-package-name: 1.0.0
-      remove-dependencies: 0.1.0
+      remove-dependencies: 0.1.1
       remove-undefined-objects: 6.0.0
       semver: 7.7.1
       set-github-repository-labels: 0.2.0
@@ -5496,6 +5512,7 @@ snapshots:
       trash-cli: 6.0.0
       zod: 3.24.2
       zod-package-json: 1.1.0
+      zod-tsconfig: 0.2.0
     transitivePeerDependencies:
       - bingo-systems
 
@@ -6524,6 +6541,8 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
+  json5@2.2.3: {}
+
   jsonc-eslint-parser@2.4.0:
     dependencies:
       acorn: 8.14.1
@@ -6711,6 +6730,8 @@ snapshots:
       micromark-util-types: 2.0.1
     transitivePeerDependencies:
       - supports-color
+
+  marked@15.0.7: {}
 
   mdast-util-from-markdown@0.8.5:
     dependencies:
@@ -7431,7 +7452,7 @@ snapshots:
       - supports-color
       - typescript
 
-  remove-dependencies@0.1.0: {}
+  remove-dependencies@0.1.1: {}
 
   remove-undefined-objects@6.0.0: {}
 
@@ -8089,6 +8110,10 @@ snapshots:
   yoctocolors@2.1.1: {}
 
   zod-package-json@1.1.0:
+    dependencies:
+      zod: 3.24.2
+
+  zod-tsconfig@0.2.0:
     dependencies:
       zod: 3.24.2
 
