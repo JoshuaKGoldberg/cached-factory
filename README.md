@@ -20,15 +20,64 @@
 
 ## Usage
 
-```shell
-npm i cached-factory
-```
+`cached-factory` exports a `CachedFactory` class that takes in "factory" function in its constructor.
+Each time a factory's `.get(key)` is called with any `key` for the first time, that factory is used to create a value under the `key`.
 
 ```ts
-import { greet } from "cached-factory";
+const cache = new CachedFactory((key) => `Cached: ${key}!`);
 
-greet("Hello, world! 🏭");
+// "Cached: apple!"
+cache.get("apple");
 ```
+
+Values are cached so that subsequent `.get(key)` calls with the same `key` instantly return the same value.
+
+```ts
+const cache = new CachedFactory((key) => ({ key }));
+
+// { key: "banana" }
+cache.get("banana");
+
+// true
+cache.get("banana") === cache.get("banana");
+```
+
+### Asynchronous Factories
+
+`CachedFactory` does not itself handle `Promise` logic, but it doesn't have to!
+Provided factory functions can themselves be `async` / return `Promise` values.
+
+```ts
+const cache = new CachedFactory(
+	async (key) => await fetch(`/some/resource?key=${key}`),
+);
+
+// Type: Promise<Response>
+cache.get("cherry");
+
+// Type: Response
+await cache.get("cherry");
+```
+
+### Other Methods
+
+#### `clear`
+
+Clears the cache.
+
+```ts
+cache.clear();
+```
+
+### TypeScript
+
+`CachedFactory` is written in TypeScript and ships with strong typing. 💪
+
+> 👉 Tip: if you're working with [`noImplicitAny`](https://aka.ms/tsconfig#noImplicitAny) enabled _(which is generally a good idea)_, an inline function provided as an argument to `CachedFactory` may need an explicit type annotation for its key.
+>
+> ```ts
+> new CachedFactory((key: string) => `Cached: ${key}!`);
+> ```
 
 ## Development
 
