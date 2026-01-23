@@ -58,7 +58,11 @@ export default tseslint.config(
 	{
 		extends: [tseslint.configs.disableTypeChecked],
 		files: ["**/*.md/*.ts"],
-		rules: { "n/no-missing-import": "off" },
+		rules: {
+			"@typescript-eslint/no-unused-expressions": "off",
+			"n/no-missing-import": "off",
+			"n/no-unsupported-features/node-builtins": "off",
+		},
 	},
 	{
 		extends: [vitest.configs.recommended],
