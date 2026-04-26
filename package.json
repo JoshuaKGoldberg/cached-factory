@@ -1,6 +1,6 @@
 {
 	"name": "cached-factory",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Creates and caches values under keys. 🏭",
 	"repository": {
 		"type": "git",
