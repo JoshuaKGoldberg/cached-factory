@@ -71,7 +71,8 @@ cache.clear();
 
 ### TypeScript
 
-`CachedFactory` is written in TypeScript and ships with strong typing. 💪
+`CachedFactory` is written in TypeScript and ships with strong typing.
+💪
 
 > 👉 Tip: if you're working with [`noImplicitAny`](https://aka.ms/tsconfig#noImplicitAny) enabled _(which is generally a good idea)_, an inline function provided as an argument to `CachedFactory` may need an explicit type annotation for its key.
 >
@@ -89,7 +90,6 @@ Thanks! 🏭
 <!-- spellchecker: disable -->
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 <table>
   <tbody>
     <tr>
@@ -98,7 +98,6 @@ Thanks! 🏭
   </tbody>
 </table>
 
-<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
