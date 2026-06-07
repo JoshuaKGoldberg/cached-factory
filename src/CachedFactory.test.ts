@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { CachedFactory } from "./index.js";
+import { CachedFactory } from "./CachedFactory.ts";
 
 describe("CachedFactory", () => {
 	it("creates a new value under a key when the value doesn't yet exist", () => {
