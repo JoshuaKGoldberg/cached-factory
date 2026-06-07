@@ -1,4 +1,4 @@
-export type Factory<Key, Value> = (key: Key) => Value;
+import { Factory } from "./CachedFactory.ts";
 
 export class WeakCachedFactory<Key extends WeakKey, Value> {
 	#cache = new WeakMap<Key, Value>();
