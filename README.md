@@ -8,7 +8,7 @@
 <p align="center">
 	<!-- prettier-ignore-start -->
 	<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-	<a href="#contributors" target="_blank"><img alt="👪 All Contributors: 1" src="https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-1-21bb42.svg" /></a>
+	<a href="#contributors" target="_blank"><img alt="👪 All Contributors: 3" src="https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-3-21bb42.svg" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 	<!-- prettier-ignore-end -->
 	<a href="https://github.com/JoshuaKGoldberg/cached-factory/blob/main/.github/CODE_OF_CONDUCT.md" target="_blank"><img alt="🤝 Code of Conduct: Kept" src="https://img.shields.io/badge/%F0%9F%A4%9D_code_of_conduct-kept-21bb42" /></a>
@@ -20,10 +20,14 @@
 
 ## Usage
 
+### `CachedFactory`
+
 `cached-factory` exports a `CachedFactory` class that takes in "factory" function in its constructor.
 Each time a factory's `.get(key)` is called with any `key` for the first time, that factory is used to create a value under the `key`.
 
 ```ts
+import { CachedFactory } from "cached-factory";
+
 const cache = new CachedFactory((key) => `Cached: ${key}!`);
 
 // "Cached: apple!"
@@ -33,6 +37,8 @@ cache.get("apple");
 Values are cached so that subsequent `.get(key)` calls with the same `key` instantly return the same value.
 
 ```ts
+import { CachedFactory } from "cached-factory";
+
 const cache = new CachedFactory((key) => ({ key }));
 
 // { key: "banana" }
@@ -42,7 +48,25 @@ cache.get("banana");
 cache.get("banana") === cache.get("banana");
 ```
 
-### Asynchronous Factories
+### `WeakCachedFactory`
+
+The package also exports a `WeakCachedFactory` class that provides the same behavior as `CachedFactory` but uses a `WeakMap` as its underlying data structure.
+As such, only objects can be used for keys (no primitives), and there is no `entries()` function.
+
+```ts
+import { WeakCachedFactory } from "cached-factory";
+
+const cache = new WeakCachedFactory((key: Context) =>
+	createSomeResultObject(key),
+);
+
+const result = cache.get(someContext);
+
+// true
+result === cache.get(someContext);
+```
+
+## Asynchronous Factories
 
 `CachedFactory` does not itself handle `Promise` logic, but it doesn't have to!
 Provided factory functions can themselves be `async` / return `Promise` values.
@@ -71,7 +95,8 @@ cache.clear();
 
 ### TypeScript
 
-`CachedFactory` is written in TypeScript and ships with strong typing. 💪
+`cached-factory` is written in TypeScript and ships with strong typing.
+💪
 
 > 👉 Tip: if you're working with [`noImplicitAny`](https://aka.ms/tsconfig#noImplicitAny) enabled _(which is generally a good idea)_, an inline function provided as an argument to `CachedFactory` may need an explicit type annotation for its key.
 >
@@ -93,7 +118,9 @@ Thanks! 🏭
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://lishaduck.github.io"><img src="https://avatars.githubusercontent.com/u/88557639?v=4?s=100" width="100px;" alt="Eli"/><br /><sub><b>Eli</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/cached-factory/issues?q=author%3Alishaduck" title="Bug reports">🐛</a> <a href="#ideas-lishaduck" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.joshuakgoldberg.com/"><img src="https://avatars.githubusercontent.com/u/3335181?v=4?s=100" width="100px;" alt="Josh Goldberg ✨"/><br /><sub><b>Josh Goldberg ✨</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/cached-factory/commits?author=JoshuaKGoldberg" title="Code">💻</a> <a href="#content-JoshuaKGoldberg" title="Content">🖋</a> <a href="https://github.com/JoshuaKGoldberg/cached-factory/commits?author=JoshuaKGoldberg" title="Documentation">📖</a> <a href="#ideas-JoshuaKGoldberg" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-JoshuaKGoldberg" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-JoshuaKGoldberg" title="Maintenance">🚧</a> <a href="#projectManagement-JoshuaKGoldberg" title="Project Management">📆</a> <a href="#tool-JoshuaKGoldberg" title="Tools">🔧</a> <a href="https://github.com/JoshuaKGoldberg/cached-factory/issues?q=author%3AJoshuaKGoldberg" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/michaelfaith"><img src="https://avatars.githubusercontent.com/u/8071845?v=4?s=100" width="100px;" alt="michael faith"/><br /><sub><b>michael faith</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/cached-factory/commits?author=michaelfaith" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
