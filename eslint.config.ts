@@ -78,10 +78,6 @@ export default defineConfig(
 		files: ["**/*.{yml,yaml}"],
 		rules: {
 			"yml/file-extension": "error",
-			"yml/sort-keys": [
-				"error",
-				{ order: { type: "asc" }, pathPattern: "^.*$" },
-			],
 			"yml/sort-sequence-values": [
 				"error",
 				{ order: { type: "asc" }, pathPattern: "^.*$" },
@@ -91,10 +87,5 @@ export default defineConfig(
 	{
 		extends: [packageJson.configs.recommended],
 		files: ["package.json"],
-		// TODO: enable these!
-		rules: {
-			"package-json/require-exports": "off",
-			"package-json/require-sideEffects": "off",
-		},
 	},
 );
