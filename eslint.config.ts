@@ -85,7 +85,7 @@ export default defineConfig(
 		},
 	},
 	{
-		extends: [packageJson.configs.recommended],
+		extends: [packageJson.configs.recommended, packageJson.configs.stylistic],
 		files: ["package.json"],
 	},
 );
