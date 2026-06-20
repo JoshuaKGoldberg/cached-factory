@@ -1,6 +1,16 @@
+name: Post Release
+
+on:
+  release:
+    types:
+      - published
+
 jobs:
   post_release:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
@@ -18,14 +28,3 @@ jobs:
             * [npm package (@latest dist-tag)](https://www.npmjs.com/package/cached-factory/v/${{ env.npm_version }})
 
             Cheers! 📦🚀
-
-name: Post Release
-
-on:
-  release:
-    types:
-      - published
-
-permissions:
-  issues: write
-  pull-requests: write
